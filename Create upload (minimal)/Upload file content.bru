@@ -1,0 +1,27 @@
+meta {
+  name: Upload file content
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseURL}}/api/records/{{record_id}}/draft/files/data.csv/content
+  body: text
+  auth: none
+}
+
+headers {
+  Content-Type: application/octet-stream
+  Accept: application/json
+}
+
+body:text {
+  time,activity,duration
+  {{now}},Spooky,05:35
+  {{now}},Chilling,03:12
+  {{now}},Boring,00:42
+}
+
+assert {
+  res.status: eq 200
+}

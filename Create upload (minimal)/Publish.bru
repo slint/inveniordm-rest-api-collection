@@ -1,0 +1,15 @@
+meta {
+  name: Publish
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseURL}}/api/records/{{record_id}}/draft/actions/publish
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 202
+}

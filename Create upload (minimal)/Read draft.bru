@@ -1,0 +1,15 @@
+meta {
+  name: Read draft
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseURL}}/api/records/{{record_id}}/draft
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Commit file upload
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseURL}}/api/records/{{record_id}}/draft/files/data.csv/commit
+  body: none
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+assert {
+  res.status: eq 200
+}

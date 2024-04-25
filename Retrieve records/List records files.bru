@@ -1,0 +1,19 @@
+meta {
+  name: List records files
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseURL}}/api/records/{{search_record_id}}/files
+  body: none
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+assert {
+  res.status: eq 200
+}

@@ -1,0 +1,51 @@
+meta {
+  name: Update draft
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseURL}}/api/records/{{record_id}}/draft
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "metadata": {
+      "title": "Poltergeist activity readings dataset",
+      "creators": [
+        {
+          "person_or_org": {
+            "given_name": "Josiah",
+            "family_name": "Carberry",
+            "type": "personal",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-1825-0097"
+              }
+            ]
+          },
+          "affiliations": [
+            {
+              "name": "Brown University"
+            }
+          ]
+        }
+      ],
+      // Add a keyword/subject
+      "subjects": [
+        {"subject": "Psychoceramics"}
+      ],
+      "publisher": "InvenioRDM",
+      "publication_date": "{{today}}",
+      "resource_type": {
+        "id": "dataset"
+      }
+    }
+  }
+}
+
+assert {
+  res.status: eq 200
+}

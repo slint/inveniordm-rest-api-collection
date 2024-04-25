@@ -1,0 +1,24 @@
+meta {
+  name: Search records
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseURL}}/api/records?q=psychoceramics&type=dataset
+  body: none
+  auth: none
+}
+
+query {
+  q: psychoceramics
+  type: dataset
+}
+
+vars:post-response {
+  search_record_id: res.body.hits.hits[0].id
+}
+
+assert {
+  res.status: eq 200
+}

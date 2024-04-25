@@ -1,0 +1,15 @@
+meta {
+  name: Get record
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseURL}}/api/records/{{search_record_id}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}

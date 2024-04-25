@@ -1,0 +1,17 @@
+headers {
+  Accept: application/vnd.inveniordm.v1+json
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:pre-request {
+  const now = new Date()
+  bru.setVar("now", now.toISOString());
+  bru.setVar("today", now.toISOString().split('T')[0]);
+}
