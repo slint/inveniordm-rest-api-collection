@@ -1,11 +1,11 @@
 meta {
-  name: Commit file upload
+  name: List files
   type: http
-  seq: 5
+  seq: 9
 }
 
-post {
-  url: {{baseURL}}/api/records/{{record_id}}/draft/files/data.csv/commit
+get {
+  url: {{baseURL}}/api/records/{{record_id}}/draft/files
   body: none
   auth: none
 }
