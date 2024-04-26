@@ -1,5 +1,5 @@
 meta {
-  name: Update draft
+  name: Update draft with minimal
   type: http
   seq: 2
 }
@@ -7,13 +7,20 @@ meta {
 put {
   url: {{baseURL}}/api/records/{{record_id}}/draft
   body: json
-  auth: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
 }
 
 body:json {
   {
     "metadata": {
-      "title": "Poltergeist activity readings dataset",
+      "title": "Advancements in Quantum Computing",
+      "resource_type": {
+        "id": "dataset"
+      },
       "creators": [
         {
           "person_or_org": {
@@ -25,23 +32,10 @@ body:json {
                 "identifier": "0000-0002-1825-0097"
               }
             ]
-          },
-          "affiliations": [
-            {
-              "name": "Brown University"
-            }
-          ]
+          }
         }
       ],
-      // Add a keyword/subject
-      "subjects": [
-        {"subject": "Psychoceramics"}
-      ],
-      "publisher": "InvenioRDM",
-      "publication_date": "{{today}}",
-      "resource_type": {
-        "id": "dataset"
-      }
+      "publication_date": "{{today}}"
     }
   }
 }

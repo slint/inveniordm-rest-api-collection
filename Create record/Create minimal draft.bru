@@ -1,0 +1,51 @@
+meta {
+  name: Create minimal draft
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseURL}}/api/records
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "metadata": {
+      "title": "Poltergeist activity readings dataset",
+      "creators": [
+        {
+          "person_or_org": {
+            "given_name": "Josiah",
+            "family_name": "Carberry",
+            "type": "personal",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-1825-0097"
+              }
+            ]
+          },
+          "affiliations": [
+            {
+              "name": "Brown University"
+            }
+          ]
+        }
+      ],
+      "publisher": "InvenioRDM",
+      "publication_date": "{{today}}",
+      "resource_type": {
+        "id": "dataset"
+      }
+    }
+  }
+}
+
+vars:post-response {
+  record_id: res.body.id
+}
+
+assert {
+  res.status: eq 201
+}
