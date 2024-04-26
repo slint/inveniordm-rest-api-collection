@@ -1,0 +1,285 @@
+meta {
+  name: Create full draft
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseURL}}/api/records
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "metadata": {
+      "resource_type": {
+        "id": "publication-preprint"
+      },
+      "creators": [
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Carberry, Josiah",
+            "given_name": "Josiah",
+            "family_name": "Carberry",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-1825-0097",
+                "scheme": "orcid"
+              }
+            ]
+          },
+          "affiliations": [
+            {
+              "name": "Quantum Research Institute"
+            }
+          ]
+        },
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Doe, Alice",
+            "given_name": "Alice",
+            "family_name": "Doe",
+            "identifiers": [
+              {
+                "identifier": "gnd:123456789",
+                "scheme": "gnd"
+              }
+            ]
+          },
+          "affiliations": [
+            {
+              "name": "Quantum Research Institute"
+            }
+          ]
+        }
+      ],
+      "title": "Advancements in Quantum Computing",
+      "publisher": "TechBooks Inc.",
+      "publication_date": "2023-05-15",
+      "subjects": [
+        {
+          "subject": "Quantum"
+        },
+        {
+          "subject": "Computing"
+        },
+        {
+          "subject": "Research"
+        }
+      ],
+      "contributors": [
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Johnson, Michael",
+            "given_name": "Michael",
+            "family_name": "Johnson"
+          },
+          "role": {
+            "id": "supervisor"
+          },
+          "affiliations": [
+            {
+              "name": "University of Science"
+            }
+          ]
+        },
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Lee, Sarah",
+            "given_name": "Sarah",
+            "family_name": "Lee"
+          },
+          "role": {
+            "id": "supervisor"
+          },
+          "affiliations": [
+            {
+              "name": "University of Technology"
+            }
+          ]
+        },
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Nielsen, Lars Holm",
+            "given_name": "Lars Holm",
+            "family_name": "Nielsen",
+            "identifiers": [
+              {
+                "identifier": "0000-0001-8135-3489",
+                "scheme": "orcid"
+              }
+            ]
+          },
+          "role": {
+            "id": "datamanager"
+          },
+          "affiliations": [
+            {
+              "name": "cern"
+            }
+          ]
+        },
+        {
+          "person_or_org": {
+            "type": "personal",
+            "name": "Dirk, Dirkin",
+            "given_name": "Dirkin",
+            "family_name": "Dirk"
+          },
+          "role": {
+            "id": "projectmanager"
+          }
+        }
+      ],
+      "dates": [
+        {
+          "date": "2023-01-01/2023-12-31",
+          "type": {
+            "id": "collected"
+          },
+          "description": "Research period for data collection"
+        }
+      ],
+      "languages": [
+        {
+          "id": "eng"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "doi",
+          "identifier": "10.1234/baz"
+        }
+      ],
+      "related_identifiers": [
+        {
+          "scheme": "doi",
+          "identifier": "10.1234/foo",
+          "relation_type": {
+            "id": "issupplementto"
+          }
+        },
+        {
+          "scheme": "doi",
+          "identifier": "10.1234/bar",
+          "relation_type": {
+            "id": "cites"
+          },
+          "resource_type": {
+            "id": "image-diagram"
+          }
+        }
+      ],
+      "version": "v1.0",
+      "rights": [
+        {
+          "id": "cc-by-4.0"
+        }
+      ],
+      "description": "<p>This article explores recent advancements in quantum computing.</p>",
+      "additional_descriptions": [
+        {
+          "description": "This is a test upload",
+          "type": {
+            "id": "notes"
+          }
+        },
+        {
+          "description": "<p>The research methodology involved conducting quantum experiments.</p>",
+          "type": {
+            "id": "methods"
+          }
+        }
+      ],
+      "locations": {
+        "features": [
+          {
+            "geometry": {
+              "coordinates": [
+                4.8945,
+                52.3667
+              ],
+              "type": "Point"
+            },
+            "place": "Amsterdam",
+            "description": "Conference venue"
+          }
+        ]
+      },
+      "references": [
+        {
+          "reference": "Smith J (2020). Introduction to Quantum Computing. Quantum Press. DOI: 10.1234/introqc"
+        }
+      ]
+    },
+    "custom_fields": {
+      "dwc:class": [
+        "Bug"
+      ],
+      "ac:captureDevice": [
+        "Book"
+      ],
+      "code:codeRepository": "https://github.com",
+      "code:programmingLanguage": [
+        {
+          "id": "python"
+        }
+      ],
+      "code:developmentStatus": {
+        "id": "active"
+      },
+      "journal:journal": {
+        "title": "Quantum Computing Review",
+        "issue": "3",
+        "volume": "10",
+        "pages": "123-135",
+        "issn": "2535-7492"
+      },
+      "meeting:meeting": {
+        "acronym": "ICQC'23",
+        "dates": "14-18 October 2023",
+        "place": "Amsterdam, The Netherlands",
+        "session_part": "1",
+        "session": "VI",
+        "title": "20th International Conference on Quantum Computing",
+        "url": "http://www.chep2023.org/"
+      },
+      "imprint:imprint": {
+        "title": "Advancements in Quantum Computing",
+        "isbn": "0-521-22151-X",
+        "pages": "1-100",
+        "place": "New York, USA"
+      },
+      "thesis:university": "University of Science",
+      "legacy:communities": [
+        "test-carlin"
+      ],
+      "legacy:subjects": [
+        {
+          "term": "Biological sciences",
+          "identifier": "http://www.oecd.org/science/inno/38235147.pdf?1.6",
+          "scheme": "FOS"
+        },
+        {
+          "term": "Quantum Computing",
+          "identifier": "http://id.loc.gov/authorities/subjects/sh85009003",
+          "scheme": "url"
+        }
+      ]
+    },
+  }
+}
+
+vars:post-response {
+  record_id: res.body.id
+}
+
+assert {
+  res.status: eq 201
+}
